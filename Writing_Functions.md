@@ -5,9 +5,6 @@ March 16, 2017
 ## Code Reuse
 
 
-```
-## Warning: package 'dplyr' was built under R version 3.3.2
-```
 
 - Copying and pasting code leads to errors
   - Every time you use your code in a new spot, you might need to tweak some of it -- you'll forget to tweak something important

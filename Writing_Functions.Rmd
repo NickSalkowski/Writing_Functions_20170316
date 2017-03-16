@@ -9,7 +9,7 @@ output:
 
 ## Code Reuse
 
-```{r, echo = FALSE, results = 'hide'}
+```{r, echo = FALSE, results = 'hide', warning = FALSE}
 suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(magrittr))
 set.seed(1234)
