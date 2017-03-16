@@ -47,7 +47,7 @@ outlier <- function(x) {
 
 ## Simulate
 
-```{r}
+```{r sim_hist}
 test <- c(rpois(98, lambda = 25),
           rpois(2, lambda = 625))
 hist(test)
@@ -241,7 +241,7 @@ z
 
 You can use ellipses to pass unspecified arguments to functions within your function:
 
-```{r, fig.height = 1.5, fig.width = 1.5}
+```{r ellipses, fig.height = 1.5, fig.width = 1.5}
 star <- function(x, y, points, radius, ...) {
   old_par <- par(mar = c(0, 0, 0, 0))
   on.exit(par(old_par))

@@ -48,7 +48,7 @@ test <- c(rpois(98, lambda = 25),
 hist(test)
 ```
 
-![](Writing_Functions_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+![](Writing_Functions_files/figure-html/sim_hist-1.png)<!-- -->
 
 ## Test!
 
@@ -372,7 +372,7 @@ star <- function(x, y, points, radius, ...) {
 star(0, 0, 8, 0.75, bg = "steelblue", lwd = 4, fg = "navy")
 ```
 
-![](Writing_Functions_files/figure-html/unnamed-chunk-16-1.png)<!-- -->
+![](Writing_Functions_files/figure-html/ellipses-1.png)<!-- -->
 
 
 ## Dropping the Braces

@@ -8,3 +8,6 @@
 !*.Rmd
 !*.md
 !*.html
+!Writing_Functions_files
+!Writing_Functions_files/figure-html
+!Writing_Functions_files/figure-html/*.png
