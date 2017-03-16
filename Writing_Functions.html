@@ -335,7 +335,8 @@ outlier &lt;- function(x, crit = 4, na.rm = FALSE) {
   x_mad &lt;- mad(x, na.rm = na.rm)
   out_log &lt;- abs(x - x_median) / x_mad &gt; crit
   out_index &lt;- which(out_log)
-  return(out_index)
+  return(list(value = x[out_index],
+              index = out_index))
 }</pre>
 
 </article></slide><slide class=''><hgroup><h2>Default Returns</h2></hgroup><article  id="default-returns">

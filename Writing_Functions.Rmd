@@ -209,7 +209,8 @@ outlier <- function(x, crit = 4, na.rm = FALSE) {
   x_mad <- mad(x, na.rm = na.rm)
   out_log <- abs(x - x_median) / x_mad > crit
   out_index <- which(out_log)
-  return(out_index)
+  return(list(value = x[out_index],
+              index = out_index))
 }
 ```
 
