@@ -100,6 +100,8 @@
 
 <slide class=''><hgroup><h2>Code Reuse</h2></hgroup><article  id="code-reuse">
 
+<pre >## Warning: package &#39;dplyr&#39; was built under R version 3.3.2</pre>
+
 <ul>
 <li>Copying and pasting code leads to errors</li>
 <li>Every time you use your code in a new spot, you might need to tweak some of it &#8211; you&#39;ll forget to tweak something important</li>
@@ -361,6 +363,21 @@ z &lt;- add_five(sqrt(2))
 z</pre>
 
 <pre >## [1] 6.414214</pre>
+
+</article></slide><slide class=''><hgroup><h2>Ellipses</h2></hgroup><article  id="ellipses">
+
+<p>You can use ellipses to pass unspecified arguments to functions within your function:</p>
+
+<pre class = 'prettyprint lang-r'>star &lt;- function(x, y, points, radius, ...) {
+  old_par &lt;- par(mar = c(0, 0, 0, 0))
+  on.exit(par(old_par))
+  symbols(x = x, y = y, 
+          stars = matrix(rep(radius * c(1, 0.5), points), nrow = 1), 
+          inches = FALSE, ...)
+}
+star(0, 0, 8, 0.75, bg = &quot;steelblue&quot;, lwd = 4, fg = &quot;navy&quot;)</pre>
+
+<p><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAMAAADQmBKKAAAADFBMVEUAAAAAAIBGgrT///89dig4AAAACXBIWXMAAA7DAAAOwwHHb6hkAAACuklEQVR4nO3b65KDIAwF4KLv/847s7OrXJMcOGmpk/zESr6JiHjp67VdnFtFgLQIkBYB0iJAWgRIiwBpESAtAqRFgLRggVJKlH5YoJRYogBpwQGlRBM9G8QQUUBpR9CxJYggYoB+KQepRCzQsSloXUQA/R0xUolIoOO9IDlTAVJ+RwQNO7uOmFwi68wJgAbd3Z5xiYCpHAJ1e8xAgxKJu0+B8i7rPpMGEvblgKpuc0/nmAl7roCyq1XdcQGqS3TtYJ8TENB/CfK+kwDKOPZpHABlk83de+nJ8qacA0ya1pk6S1wcuQp0ZM0ZxwlUnEypySltMh8x+7WsHSs9z2iL2YOBmtEigZpGMqgZLVduY6MxDQaq8hydpl4bUCBkPdTLbgvAg4KmREiBoBXjCsicBAVNiKACYWvqeZA9hz8IKxAOgkWYB7wN2hIEisAjht4ozoGQDBMgSIQW6LtB/fWGAeQyMXbXXXYQeT2U0qSnWtNyQAua1rQMWtagJhFE0kCmMYiqsZsGIAdNQ+qb+iAfTWPCQXRNaZqpkCMHARVjyIuDjKHK9DaNCKKXyXLSqzM1z2TS6CCSyVYcI2idZNcYQUsmSGMHnbNzE8iZuVGcAtlzfPUif1cQ4vG+UZw9y1xBmMf3YcPU1OgNQj3uD6xgkOMjvcmLGVaib34svHa1dwLNeLxeLfQK1DMOfubzNqiT52Ovp+o0o+VRtxko0de+4iwSpDJGnnoPOqjJebYjK2suSGzQ3XeuaUH3lorkAepwPvupxU4fo5QjtaWOx66wJwvU2ySd3R4gscsMJPzCLKJ/FCd28OjPBuWtlumYCJLjKpH1zPYGnbuCrCf2e0BbfXG+3Tf5e/5rgVSgh/7z5eR5ngo6aZ4AqfHUf3HyIkBaBEiLAGkRIC0CpEWAtAiQFgHSIkBa7AjaLH4AnBjSnjof2m4AAAAASUVORK5CYII=' title=''/><!-- --></p>
 
 </article></slide><slide class=''><hgroup><h2>Dropping the Braces</h2></hgroup><article  id="dropping-the-braces">
 

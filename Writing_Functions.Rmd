@@ -237,6 +237,22 @@ z <- add_five(sqrt(2))
 z
 ```
 
+## Ellipses
+
+You can use ellipses to pass unspecified arguments to functions within your function:
+
+```{r, fig.height = 1.5, fig.width = 1.5}
+star <- function(x, y, points, radius, ...) {
+  old_par <- par(mar = c(0, 0, 0, 0))
+  on.exit(par(old_par))
+  symbols(x = x, y = y, 
+          stars = matrix(rep(radius * c(1, 0.5), points), nrow = 1), 
+          inches = FALSE, ...)
+}
+star(0, 0, 8, 0.75, bg = "steelblue", lwd = 4, fg = "navy")
+```
+
+
 ## Dropping the Braces
 
 If your function code is really short, you **can** skip the braces, and it will still work:

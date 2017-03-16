@@ -5,6 +5,9 @@ March 16, 2017
 ## Code Reuse
 
 
+```
+## Warning: package 'dplyr' was built under R version 3.3.2
+```
 
 - Copying and pasting code leads to errors
   - Every time you use your code in a new spot, you might need to tweak some of it -- you'll forget to tweak something important
@@ -352,6 +355,25 @@ z
 ```
 ## [1] 6.414214
 ```
+
+## Ellipses
+
+You can use ellipses to pass unspecified arguments to functions within your function:
+
+
+```r
+star <- function(x, y, points, radius, ...) {
+  old_par <- par(mar = c(0, 0, 0, 0))
+  on.exit(par(old_par))
+  symbols(x = x, y = y, 
+          stars = matrix(rep(radius * c(1, 0.5), points), nrow = 1), 
+          inches = FALSE, ...)
+}
+star(0, 0, 8, 0.75, bg = "steelblue", lwd = 4, fg = "navy")
+```
+
+![](Writing_Functions_files/figure-html/unnamed-chunk-16-1.png)<!-- -->
+
 
 ## Dropping the Braces
 
